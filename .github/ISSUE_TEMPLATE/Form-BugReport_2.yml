@@ -1,0 +1,63 @@
+name: Bug Report/Relatório de Erro
+description: Reporte um erro encontrado
+title: "[Bug/Erro]: "
+labels: ["bug", "triage"]
+assignees:
+  - octocat
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Obrigado por dedicar seu tempo para preencher este relatório de erro!
+        Thank you for taking the time to fill out this bug report!
+  - type: input
+    id: contact
+    attributes:
+      label: Informações de Contato/Contact Details
+      description: Como podemos entrar em contato caso precisemos de mais informações?/How can we get in touch with you if we need more info?
+      placeholder: ex. email@example.com
+    validations:
+      required: false
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: O que aconteceu?/What happened?
+      description: Conte-nos também, o que você esperava que acontecesse?/Also tell us, what did you expect to happen?
+      placeholder: Conte-nos o que você viu!/Tell us what you see!
+      value: "A bug happened!"
+    validations:
+      required: true
+  - type: dropdown
+    id: version
+    attributes:
+      label: Versão/Version
+      description: Qual versão do nosso software você está usando?/What version of our software are you running?
+      options:
+        - 1.0.2 (Padrão/Default)
+        - 1.0.3 (Experimental/Edge)
+    validations:
+      required: true
+  - type: dropdown
+    id: browsers
+    attributes:
+      label: Em quais navegadores você está vendo o problema?/What browsers are you seeing the problem on?
+      multiple: true
+      options:
+        - Firefox
+        - Chrome
+        - Safari
+        - Microsoft Edge
+  - type: textarea
+    id: logs
+    attributes:
+      label: Saída de log relevante/Relevant log output
+      description: Por favor, copie e cole qualquer saída de log relevante. Isso será formatado automaticamente em código, portanto, não é necessário usar crases./Please copy and paste any relevant log output. This will be automatically formatted into code, so no need for backticks.
+      render: shell
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Código de Conduta/Code of Conduct
+      description: Ao enviar este problema, você concorda em seguir nosso [Código de Conduta](https://example.com)/By submitting this issue, you agree to follow our [Code of Conduct](https://example.com)
+      options:
+        - label: Concordo em seguir o Código de Conduta deste projeto/I agree to follow this project's Code of Conduct
+          required: true
